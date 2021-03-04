@@ -20,7 +20,7 @@ unset LIQUIBASE_DISABLE_DRIVER_CHECK
 echo "Installing sqlite driver"
 sqlite_jdbc_version=3.34.0
 sqlite_jdbc_download_url=https://repo1.maven.org/maven2/org/xerial/sqlite-jdbc/${sqlite_jdbc_version}
-export LIQUIBASE_CLASSPATH=${LIQUIBASE_CLASSPATH:-/opt/jdbc/sqlite-jdbc.jar}
+export LIQUIBASE_CLASSPATH=${LIQUIBASE_CLASSPATH:-/opt/jdbc/sqlite-jdbc.jar:/opt/test_liquibase/}
 export LIQUIBASE_DRIVER=${LIQUIBASE_DRIVER:-org.sqlite.JDBC}
 export LIQUIBASE_URL=${LIQUIBASE_URL:-'jdbc:sqlite:${DATABASE}'}
 cd /opt/jdbc
@@ -36,5 +36,5 @@ cd /workspace
 sqlite3 "$LIQUIBASE_DATABASE" .databases
 
 echo "Applying changelog"
-entrypoint.sh liquibase --changeLogFile=/opt/test_liquibase/changelog.xml updateTestingRollback
+entrypoint.sh liquibase --changeLogFile=changelog.xml updateTestingRollback
 
