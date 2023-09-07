@@ -1,6 +1,6 @@
 FROM anapsix/alpine-java:8
 
-ARG liquibase_version=4.3.1
+ARG liquibase_version=4.8.0
 ARG liquibase_download_url=https://github.com/liquibase/liquibase/releases/download/v${liquibase_version}
 ARG user=liquibase
 ARG uid=1000
