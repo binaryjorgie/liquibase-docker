@@ -32,5 +32,4 @@ RUN adduser --system --uid ${uid} ${user}
 COPY --chown=${uid} liquibase.properties /workspace/liquibase.properties
 WORKDIR /workspace
 ONBUILD VOLUME /workspace
-ENTRYPOINT [ "/usr/local/bin/entrypoint.sh" ]
 CMD ['/bin/sh', '-i']
