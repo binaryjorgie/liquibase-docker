@@ -2,7 +2,7 @@
 
 **A lightweight Docker for running [Liquibase](https://www.liquibase.org)**
 
-DockerHub: [liquibase](https://hub.docker.com/r/jminning/liquibase/) - GitHub: [liquibase-docker](https://github.com/jimminning/liquibase-docker)
+DockerHub: [liquibase](https://hub.docker.com/r/mattjorgensen4im/liquibase/) - GitHub: [liquibase-docker](https://github.com/mattjorgensen4im/liquibase-docker)
 
 # Liquibase Docker images with drivers
 
@@ -12,7 +12,7 @@ DockerHub: [liquibase](https://hub.docker.com/r/jminning/liquibase/) - GitHub: [
 
 | DockerHub Image | GitHub Source |
 |---|---|
-| [**liquibase-mysql**](https://hub.docker.com/r/jminning/liquibase-mysql/) | [liquibase-mysql-docker](https://github.com/jimminning/liquibase-mysql-docker) |
+| [**liquibase-mysql**](https://hub.docker.com/r/mattjorgensen4im/liquibase-mysql/) | [liquibase-mysql-docker](https://github.com/jimminning/liquibase-mysql-docker) |
 
 # Usage
 
@@ -21,7 +21,7 @@ DockerHub: [liquibase](https://hub.docker.com/r/jminning/liquibase/) - GitHub: [
 You can use this image by creating your own `Dockerfile` which inherits using a FROM line:
 
 ```
-FROM jminning/liquibase-mysql-docker
+FROM mattjorgensen4im/liquibase-mysql-docker
 ENV LIQUIBASE_HOST=database.server
 ENV LIQUIBASE_DATABASE=dbname
 ENV LIQUIBASE_USERNAME=user
@@ -52,7 +52,7 @@ appropriate to your database like so... where _/local/path/to/changelog/_ is the
 
 ```
 $ docker run -e LIQUIBASE_HOST=database.server -e LIQUIBASE_USERNAME=user -e LIQUIBASE_PASSWORD=pass \
-    -e LIQUIBASE_DATABASE=dbname -v /local/path/to/changelog/:/workspace/ jminning/liquibase-mysql \
+    -e LIQUIBASE_DATABASE=dbname -v /local/path/to/changelog/:/workspace/ mattjorgensen4im/liquibase-mysql \
     liquibase updateTestingRollback
 ```
 
